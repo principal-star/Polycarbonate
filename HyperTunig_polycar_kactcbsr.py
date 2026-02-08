@@ -187,7 +187,7 @@ for mdl in models:
     model1 = mdl[1]
     #param_dist=hy_par[i]
     #param_dist1=hy_par1[i]
-    random_search = RandomizedSearchCV(model1, param_distributions=hypar[i], n_iter=10, cv=5, scoring='neg_mean_squared_error', random_state=42)
+    random_search = RandomizedSearchCV(model1, param_distributions=hypar[i], n_iter=50, cv=5, scoring='neg_mean_squared_error', random_state=42)
     # Perform RandomizedSearchCV
     random_search.fit(xtrain, ytrain)
     # Get the best estimator
@@ -385,4 +385,5 @@ bst_para_rs=pd.DataFrame(bst_para_rs)
 bst_para_rs.to_excel('d:/msk/lenin/polycarbonate/polycar_ka2_bsthyparameters_rs_4ml_1.xlsx')
 bst_para=np.asarray(bst_para)
 bst_para=pd.DataFrame(bst_para)
+
 bst_para.to_excel('d:/msk/lenin/polycarbonate/polycar_ka2_bsthyparameters_gs_4ml_1.xlsx')
